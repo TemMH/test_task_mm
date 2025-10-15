@@ -5,6 +5,8 @@
 .env.production
 .phpactor.json
 .phpunit.result.cache
+!docker_s/.env
+!docker_s/.gitkeep
 /.fleet
 /.idea
 /.nova

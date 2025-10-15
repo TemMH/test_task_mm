@@ -10,7 +10,7 @@
 # Установка
 
 
-1. Запускаем контейнер
+1. Запускаем контейнеры docker если он есть* иначе стандартный установка/запуск
 
 ```
 cd docker_s
@@ -30,6 +30,8 @@ docker-compose exec php-fpm bash
 composer i
 ```
 
+Восстанавливаем .env
+
 ```
 php artisan migrate --seed
 ```
@@ -38,9 +40,6 @@ php artisan migrate --seed
 php artisan key:generate
 ```
 
-```
-chown -R www-data:www-data storage bootstrap/cache
-```
 
 3. В другом терминале устанавливаем зависимости и компилируем
 
