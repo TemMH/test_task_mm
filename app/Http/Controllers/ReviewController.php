@@ -16,15 +16,15 @@ class ReviewController extends Controller
      * @param  StoreReviewRequest  $request
      * @param $id
      *
-     * @return ReviewResource
+     * @return array
      */
-    public function store(StoreReviewRequest $request, $id): ReviewResource
+    public function store(StoreReviewRequest $request, $id): array
     {
         $data = $request->validated();
 
         $review = $this->reviewService->create($data, $id);
 
-        return ReviewResource::make($review)->resolve();
+        return (new ReviewResource($review))->resolve();
     }
 
 }

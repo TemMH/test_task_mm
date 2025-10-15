@@ -25,7 +25,7 @@ class StoreReviewRequest extends FormRequest
         return [
             'username' => 'required|string|min:3|max:50',
             'rating' => 'required|integer|between:1,5',
-            'comment' => 'string'
+            'comment' => 'nullable|string',
         ];
     }
 }

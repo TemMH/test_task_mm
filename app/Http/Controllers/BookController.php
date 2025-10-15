@@ -21,11 +21,11 @@ class BookController extends Controller
     /**
      * @param $id
      *
-     * @return BookResource
+     * @return array
      */
-    public function show($id): BookResource
+    public function show($id): array
     {
         $book = Book::with('reviews')->findOrFail($id);
-        return BookResource::make($book)->resolve();
+        return (new BookResource($book))->resolve();
     }
 }
